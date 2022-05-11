@@ -1,0 +1,67 @@
+%! TeX root = ../main.tex
+\Introduction
+
+%Massive MIMO is one of the promising techniques to improve spectral efficiency
+%and network performance for reaching its targeted multi-gigabit throughput in 5G
+%systems. For 5G New Radio (NR) systems, one of the key differences compared to
+%4G systems is the utilization of high frequency millimeter wave (mmWave) bands
+%in addition to sub-6GHz bands. To keep the complexity and implementation cost
+%low, hybrid analog-digital beam-forming with large-scale antenna array has
+%become a common design approach to address the issue of higher propagation loss
+%as well as to improve spectral efficiency in mmWave communication in 5G NR. The
+%5G NR standard is designed to adapt to different beam-forming architecture and
+%deployment scenarios Beamforming techniques used in mmWave communication play an
+%extremely important role due to specific propagation conditions and high power
+%loss. In mmWave communication issues, those appear due to fast and significant
+%channel changes are very crucial and critical for overall system performance.
+%Thus the beamforming accuracy is a cornerstone of mm technologies.  In typical
+%mmWave systems, realignment of beam pair is performed with the help of beam
+%search that sweeps through all possible beam pairs periodically and selects the
+%best pair, either through an exhaustive search \cite{Giordani2019}. This beam sweep procedure
+%takes significant time and is vulnerable to varying channels (such as UE
+%rotation or blockage).  So the main target of this project is to develop fast,
+%accurate and robust beam management algorithms for mobile UE under practical
+%scenarios which will be effective from a computational complexity point of view
+%also. 
+%The project consists of several stages which are related to different key
+%aspects of beam management. Stage 1 is dedicated to literature survey and
+%initial studying of effects via realistic channel modeling. It is performed to
+%form a general view and reveal existing solutions.  Stage 2 is dedicated to AOA
+%estimation algorithm development. Beam tracking algorithm development is
+%considered during Stage 3. Finally, Stage 4 is dedicated to beam management
+%under blockage. 
+
+Massive MIMO — один из многообещающих методов повышения спектральной
+эффективности и производительности сети для достижения целевой пропускной
+способности в несколько гигабит/с для систем пятого поколения.
+В системе 5G New Radio (NR) есть одно из главных отличий по сравнению с
+системой предыдущего поколения (4G) — это использование высокочастотных диапазонов миллиметровых волн (mmWave) в
+в дополнение к диапазонам ниже 6 ГГц. 
+
+Чтобы снизить сложность и стоимость реализации, гибридное аналогово-цифровое формирование луча с крупномасштабной антенной решеткой
+стать общим подходом к проектированию для решения проблемы более высоких потерь при распространении, а также для повышения эффективности использования спектра в связи миллиметрового диапазона в 5G NR.
+
+Стандарт 5G NR предназначен для адаптироваться к различным архитектурам
+формирования луча и различным сценариям поведения.
+
+Методы формирования ДН,используемые в миллиметровом канале, играют чрезвычайно
+важную роль из-за специфичных условий распространения и больших потерь
+мощности.  Кроме того быстрые изменения канала оказывают сильнейшее влияние на
+производительность
+такой системы.
+Таким образом, точность формирования ДН играет крайне важную роль во всей
+технологии мм-связи. 
+
+В типичных системах миллиметрового диапазона поиск пары лучей пользователя (UE) и
+базовой станции (BS)
+выполняется с помощью периодического перебора пар возможных лучей с выбором
+наилучшей пары. Зачастую это делается путем полного перебора \textit{всех}
+возможных пар.  Такая процедура требует значительного времени и уязвима для
+некоторых каналов, например, вращение пользователя или блокировка пользователя
+препятствием. 
+
+Таким образом, основной целью этой работы является разработка быстрого,
+точного, надежного, а также эффективного с точки зрения вычислительной сложности алгоритма управления диаграммой направленности
+пользователя в практических
+сценариях. Поскольку тема достаточно обширная, мы коснемся лишь оценки AOA со
+стороны пользователя.
