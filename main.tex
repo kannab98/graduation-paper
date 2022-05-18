@@ -2,66 +2,78 @@
 
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Настройки титулки
 \usepackage{unn-titlepage}
-\usepackage{subcaption}
+\TitleWorkTitle{Оценка угловой координаты источника излучения в 
+мобильных системах связи миллиметрового диапазона \\ длин волн}
+
+\setauthor{1}{Зав. кафедрой статистической радиофизики  \\ и мобильных систем связи,  \\ профессор, д.ф.–м.н.}{Мальцев А.А.}
+\setauthor{2}{Научный руководитель,  \\ профессор, д.ф.-м.н}{Мальцев А.А.}
+\setauthor{3}{Рецензент,  \\ доцент, к.ф-м.н.}{Михеев П.В.}
+\setauthor{4}{Консультант по технике безопасности,  \\ доцент, к.ф.-м.н.}{Клемина А.В.}
+\setauthor{5}{Студент 4-го курса магистратуры}{Понур К.А.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% Для псевдокода
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{algorithm}
 \usepackage{algpseudocode} 
-\usepackage{enumitem}
+\floatname{algorithm}{Алгоритм}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage[intoc, russian]{nomencl}
-
-
-\makeatletter
-    \newcommand{\whereNoStar}[2]{#1 -- #2\nomenclature{#1}{#2}}
-    \newcommand{\whereStar}[2]{#1\nomenclature{#1}{#2}}
-    \newcommand{\where}{
-                 \@ifstar
-                 \whereStar%
-                 \whereNoStar%
-    }
-\makeatother
-\makenomenclature  
-
-% Нуменклатура в две колонки
-%% This will add the subgroups
-%----------------------------------------------
+% Настройки номенклатуры
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{nomencl}
 \usepackage{multicol}
 \usepackage{etoolbox}
 \renewcommand\nomgroup[1]{%
-  \item[\bfseries
-  \ifstrequal{#1}{A}{Аббревиатуры}{%
-  \ifstrequal{#1}{B}{Number Sets}{%
-  \ifstrequal{#1}{C}{}{}}}%
+\item[\bfseries
+\ifstrequal{#1}{A}{Сокращения}{%
+\ifstrequal{#1}{B}{Обозначения}{%
+\ifstrequal{#1}{C}{}{}}}%
 ]}
-%----------------------------------------------
-
-%% This will add the units
-%----------------------------------------------
 \newcommand{\nomunit}[1]{%
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
-%----------------------------------------------
 \renewcommand{\nompreamble}{\footnotesize\begin{multicols}{2}}
 \renewcommand{\nompostamble}{\end{multicols}}
+\renewcommand{\nomname}{Обозначения и сокращения}
+\makenomenclature  
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\floatname{algorithm}{Алгоритм}
-\addbibresource{library.bib}
 
+
+
+
+% Прочее
 \newcommand\mean[1]{\langle #1 \rangle}
 \newcommand\const{\text{const}}
-
 \renewcommand{\phi}{\varphi}
 \renewcommand{\epsilon}{\varepsilon}
+\renewcommand\vec[1]{\vectorbold{#1}}
 \setcounter{MaxMatrixCols}{20}
 
-% \author{Кирилл Понур}
+% Настройка переносов некоторых слов
+\hyphenation{при-ем-ни-ков}
 
-% \title{Оценка угла прихода сигнала на приемной антенне пользователя в миллиметровом канале связи}
+\addbibresource{library.bib}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{soulutf8}
 
 
-% \NirReportName{Выпускная квалификационная работа}
 
-\TitleWorkTitle{Оценка угловой координаты источника излучения в миллиметровом канале связи стандарта 5G NR}
+% \titlecontents{chapter}[0pt\addvspace{15pt}]
+% {\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
+%   \small\scshape\vskip-\baselineskip}{}{}{}
+% \titlecontents*{section}[20pt]
+% {\upshape}{}{}
+% {, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
 \begin{document}
 
 
@@ -71,15 +83,20 @@
 
 \tableofcontents
 \newpage
+\include{sections/99-nomencl}
+\printnomenclature
+\newpage
 
 \include{sections/0-intro}
 \include{sections/1-chapter-one}
 \include{sections/2-chapter-two}
+\include{sections/3-singlepath-estimators}
+\include{sections/4-multipath-estimators}
+\include{sections/5-simulations}
+
+\include{sections/98-safety}
 
 
-\newpage
-\include{sections/99-nomencl}
-\printnomenclature
 
 % \nocite{*}
 \newpage

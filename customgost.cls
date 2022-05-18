@@ -2,18 +2,23 @@
 
 \ProvidesClass{customgost}[2015/11/01 v2.0 Non Standard LaTeX document class]
 
+\LoadClass{article}
 
 
-\RequirePackage[utf8]{inputenc}
-\RequirePackage[T2A]{fontenc}
+% \RequirePackage[utf8]{inputenc}
+\RequirePackage[T1, T2A]{fontenc}
 \RequirePackage[english, russian]{babel}
 
-% \PassOptionsToClass{\CurrentOption}{scrartcl}
-% \LoadClass[a4paper, fontsize=13pt]{scrartcl}
 
-\PassOptionsToClass{\CurrentOption}{extarticle}
-\LoadClass[a4paper, 12pt]{extarticle}
 
+\RequirePackage[fontsize=13]{fontsize}
+\RequirePackage[no-math]{fontspec}
+\setmainfont{times.ttf}[
+    Path = fonts/,
+    BoldFont       =  timesbd.ttf,
+    ItalicFont     =  timesi.ttf,
+    BoldItalicFont =  timesbi.ttf
+]
 
 
 % minimal values from ГОСТ 7.32-2001 ред. 2009 года.pdf item 6.1.2
@@ -95,3 +100,25 @@
   \section*{Введение}
   \addcontentsline{toc}{section}{Введение}
  }
+
+\newcommand\SafetyRules{
+  \section*{Техника безопасности}
+  \addcontentsline{toc}{section}{Техника безопасности}
+ }
+
+ % Цвета для гиперссылок
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{000000} % цвет ссылок
+\definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+ 
+ 
+ 
+\usepackage[
+    unicode, 
+    colorlinks, 
+    urlcolor=urlcolor, 
+    linkcolor=linkcolor,
+    citecolor=linkcolor
+]{hyperref}
+
+

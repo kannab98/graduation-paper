@@ -66,36 +66,44 @@
 \def\maketitle{\titlepage}
 
 \newcounter{cnt}
-
-
-\newcommand\addtext[1]{%
+\newcommand\addauthor[2]{%
   \stepcounter{cnt}%
-  \csdef{post\thecnt}{#1}}
+  \csdef{post\thecnt}{#1}
+  \csdef{author\thecnt}{#2}
+}
 
-\newcommand\gettext[1]{%
-  \csuse{post#1}}
+\newcommand\getauthor[1]{%
+  \csuse{post#1}
+  \csuse{author#1}
+}
 
-\addtext{Зав. кафедрой статистической радиофизики  \\ и мобильных систем связи,  \\ профессор, д.ф.–м.н.}
-\addtext{Научный руководитель,  \\ профессор, д.ф.-м.н}
-\addtext{Рецензент,  \\ доцент, к.ф-м.н.}
-\addtext{Консультант по технике безопасности,  \\ доцент, к.ф.-м.н.}
-\addtext{Студент 2-го курса магистратуры}
+\newcommand\setauthor[3]{%
+  \csdef{post#1}{#2}
+  \csdef{author#1}{#3}
+}
 
-\setcounter{cnt}{0}
+\addauthor{Зав. кафедрой статистической радиофизики  \\ и мобильных систем связи,  \\ профессор, д.ф.–м.н.}{Мальцев А.А.}
+\addauthor{Научный руководитель,  \\ профессор, д.ф.-м.н}{Мальцев А.А.}
+\addauthor{Рецензент,  \\ доцент, к.ф-м.н.}{Михеев П.В.}
+\addauthor{Консультант по технике безопасности,  \\ доцент, к.ф.-м.н.}{Клемина А.В.}
+\addauthor{Студент 2-го курса магистратуры}{Понур К.А.}
+
+% \setcounter{cnt}{0}
 
 
-\renewcommand\addtext[1]{%
-  \stepcounter{cnt}%
-  \csdef{author\thecnt}{#1}}
+% \renewcommand\addtext[1]{%
+%   \stepcounter{cnt}%
+%   \csdef{author\thecnt}{#1}
+% }
 
-\renewcommand\gettext[1]{%
-  \csuse{author#1}}
+% \renewcommand\gettext[1]{%
+%   \csuse{author#1}}
 
-\addtext{Мальцев А.А.}
-\addtext{Мальцев А.А.}
-\addtext{Михеев П.В.}
-\addtext{Клемина А.В.}
-\addtext{Понур К.А.}
+% \addtext{Мальцев А.А.}
+% \addtext{Мальцев А.А.}
+% \addtext{Михеев П.В.}
+% \addtext{Клемина А.В.}
+% \addtext{Понур К.А.}
 
 
 \renewenvironment*{titlepage}{

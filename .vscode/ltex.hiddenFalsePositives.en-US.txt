@@ -1,0 +1,9 @@
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qop-tical net-works semi-conduc-tor IEEE-Xplore\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qop-tical net-works semi-conduc-tor IEEE-Xplore\\E$"}
+{"rule":"EN_DIACRITICS_REPLACE","sentence":"^\\QSubspace-based AOA estimation in mmWave NR system using power measurement with a single-port antenna array Oleg Shmonin, Vitaliy Kuptsov, Sergey Trushkov, Kirill Ponur, Georgij Serebryakov, Hao Wang, Member, IEEE, Jiankun Zhang, Member, IEEE, Anatoliy Krivelevich\\E$"}
+{"rule":"THREE_NN","sentence":"^\\QThe paper is dedicated to multipath angle of arrival (AOA) estimation problem in millimeter wave (mmWave) 5G NR communication system.\\E$"}
+{"rule":"THE_PUNCT","sentence":"^\\QThe scalar values are noted as a; \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a vector and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a matrix.\\E$"}
+{"rule":"SUBJECT_VERB_AGREEMENT_PLURAL","sentence":"^\\QThe angular brackets notes the mathematical expectation and \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a Hermitian conjugate of vector \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"FIRST_OF_ALL","sentence":"^\\QFirst of all, it is the quality of the power measurement (the number of samples employed for averaging).\\E$"}
+{"rule":"FIRST_OF_ALL","sentence":"^\\QFirst of all, we can see that correlation matrix \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q of radiation sources is replaced with identity matrix \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"T_HE","sentence":"^\\QT he rapidly growing demands of data rate, latency and reliability have led 5G New Radio (NR) and Wi-Fi communication systems to millimetre-wave band \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}

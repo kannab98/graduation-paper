@@ -7,19 +7,32 @@
             ]
         },
         {
+            "name": "lualatex",
+            "tools": [
+                "lualatex",
+            ]
+        },
+        {
+            "name": "makeindex",
+            "tools": [
+                "makeindex",
+            ]
+        },
+        {
+            "name": "lualatex-biber-lualatex-lualatex",
+            "tools": [
+                "lualatex",
+                "biber",
+                "lualatex",
+                "lualatex",
+            ]
+        },
+        {
             "name": "pdflatex-biber-pdflatex-pdflatex",
             "tools": [
                 "pdflatex",
                 "biber",
                 "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdflatex-makeindex-pdflatex",
-            "tools": [
-                "pdflatex",
-                "makeindex",
                 "pdflatex"
             ]
         },
@@ -38,6 +51,18 @@
         {
             "name": "pdflatex",
             "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-output-directory=%OUTDIR%",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "lualatex",
+            "command": "lualatex",
             "args": [
                 "-synctex=1",
                 "-interaction=nonstopmode",
