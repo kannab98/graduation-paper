@@ -1,0 +1,329 @@
+\documentclass{unn}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Настройки титулки
+\usepackage{unn-titlepage}
+\TitleWorkTitle{Оценка угловой координаты источника излучения в 
+мобильных системах связи миллиметрового диапазона \\ длин волн}
+
+\setauthor{1}{Зав. кафедрой статистической радиофизики  \\ и мобильных систем связи,  \\ профессор, д.ф.–м.н.}{Мальцев А.А.}
+\setauthor{2}{Научный руководитель,  \\ профессор, д.ф.-м.н}{Мальцев А.А.}
+\setauthor{3}{Рецензент,  \\ доцент, к.ф-м.н.}{Михеев П.В.}
+\setauthor{4}{Консультант по технике безопасности,  \\ доцент, к.ф.-м.н.}{Клемина А.В.}
+\setauthor{5}{Студент 4-го курса магистратуры}{Понур К.А.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+% Для псевдокода
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage{algpseudocode} 
+\floatname{algorithm}{Алгоритм}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Настройки номенклатуры
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{nomencl}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+\item[\bfseries
+\ifstrequal{#1}{A}{Сокращения}{%
+\ifstrequal{#1}{B}{Обозначения}{%
+\ifstrequal{#1}{C}{}{}}}%
+]}
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+\renewcommand{\nompreamble}{\footnotesize\begin{multicols}{2}}
+\renewcommand{\nompostamble}{\end{multicols}}
+\renewcommand{\nomname}{Обозначения и сокращения}
+\makenomenclature  
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+% Прочее
+\newcommand\mean[1]{\langle #1 \rangle}
+\newcommand\const{\text{const}}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand\vec[1]{\vectorbold{#1}}
+\setcounter{MaxMatrixCols}{20}
+
+% Настройка переносов некоторых слов
+\hyphenation{при-ем-ни-ков}
+
+\addbibresource{library.bib}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{soulutf8}
+
+
+
+% \titlecontents{chapter}[0pt\addvspace{15pt}]
+% {\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
+%   \small\scshape\vskip-\baselineskip}{}{}{}
+% \titlecontents*{section}[20pt]
+% {\upshape}{}{}
+% {, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+\begin{document}
+
+
+
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+\include{sections/99-nomencl}
+\printnomenclature
+\newpage
+
+\include{sections/0-intro}
+\include{sections/1-chapter-one}
+\include{sections/2-chapter-two}
+\include{sections/3-singlepath-estimators}
+\include{sections/4-multipath-estimators}
+\include{sections/5-simulations}
+
+\include{sections/98-safety}
+
+
+
+% \nocite{*}
+\newpage
+\printbibliography
+
+
+\end{document}
+
+
+
+% [1]M. Giordani, M. Polese, A. Roy, D. Castor and M. Zorzi, "A Tutorial on Beam Management for
+% 3GPP NR at mmWave Frequencies," IEEE Communications Surveys & Tutorials, vol. 21, no. 1,
+% pp. 173-196, 2019.
+% [2]IEEE doc. 802.11-09/0334r8 Channel Models for 60 GHz WLAN Systems, A. Maltsev et al., May
+% 2010.
+% [3] IEEE doc. 802.11-15/1150r9 Channel Models for IEEE 802.11ay, A. Maltsev et al., March 2017.
+% [4]H. Xu, V. Kukshya and T. S. Rappaport, “Spatial and temporal characteristics of 60-GHz indoor
+% channels,” IEEE Journal on Selected Areas in Communications, vol. 20, no. 3, pp. 620 - 630,
+% 2002.
+% [5]M. R. Akdeniz, Y. Liu, M. K. Samimi, S. Sun, S. Rangan and E. Erkip, “Millimeter Wave
+% Channel Modeling and Cellular Capacity Evaluation,” IEEE Journal on Selected Areas in
+% Communications, vol. 32, no. 6, pp. 1164 - 1179, 2014.
+% [6]T. S. Rappaport, G. R. MacCartney, M. K. Samimi and S. Sun, "Wideband Millimeter-Wave
+% Propagation Measurements and Channel Models for Future Wireless Communication System
+% Design," IEEE Transactions on Communications, vol. 63, no. 9, pp. 3029 - 3056, 2015.
+% [7]Y. M. Tsang and A. S. Y. Poon, “Detecting Human Blockage and Device Movement in
+% mmWave Communication System,” in 2011 IEEE Global Telecommunications Conference -
+% GLOBECOM 2011, Houston, TX, USA, 2011.
+% [8]IEEE doc. 802.11-09/0995r1, 60 GHz Transmission and Reflection Measurements, Tian-Wei
+% Huang et al, September 23, 2009.
+% [9]M. Jacob, C. Mbianke and T. Kürner, "A dynamic 60 GHz radio channel model for system level
+% simulations with MAC protocols for IEEE 802.11ad," in IEEE International Symposium on
+% Consumer Electronics (ISCE 2010), Braunschweig, Germany, 2010.
+% [10] M. Peter, M. Wisotzki, M. Raceala-Motoc, W. Keusgen, R. Felbecker, M. Jacob, S. Priebe and
+% T. Kürner, “Analyzing human body shadowing at 60 GHz: Systematic wideband MIMO
+% measurements and modeling approaches,” in 2012 6th European Conference on Antennas and
+% Propagation (EUCAP), Prague, Czech Republic, 2012.
+% [11] V. Raghavan, L. Akhoondzadeh-Asl, V. Podshivalov, J. Hulten, M. A. Tassoudji, O. H. Koymen,
+% A. Sampath and J. Li, "Statistical Blockage Modeling and Robustness of Beamforming in
+% Millimeter-Wave Systems," IEEE Transactions on Microwave Theory and Techniques, vol. 67,
+% no. 7, pp. 3010-3024, 2019.
+% 198
+% [12] G. R. MacCartney, S. J, S. Sun and T. S. Rappaport, “Millimeter-wave human blockage at 73
+% GHz with a simple double knife-edge diffraction model and extension for directional antennas,”
+% in Proc. IEEE Veh. Tech. Conf. (Fall), Montreal, Canada, 2016.
+% [13] 3GPP TR 38.901 V16.1.0 Study on channel model for frequencies from 0.5 to 100 GHz, 2019.
+% [14] B. Gao, Z. Xiao, C. Zhang, L. Su, D. Jin and L. Zeng, “Double-link beam tracking against
+% human blockage and device mobility for 60-GHz WLAN,” in 2014 IEEE Wireless
+% Communications and Networking Conference (WCNC), Istanbul, 2014.
+% [15] S. Collonge, G. Zaharia and G. E. Zein, “Influence of the Human Activity on Wide-Band
+% Characteristics of the 60 GHz Indoor Radio Channel,” IEEE Trans Wireless Comm., vol. 3, no.
+% 6, pp. 2396 - 2406, 2004.
+% [16] E. Tuncer and B. Friedlander, Classical and modern direction-of-arrival estimation, Burlington,
+% USA: Academic Press is an imprint of Elsevier, 2009.
+% [17] P. Stoica and R. Moses, Spetral analysis of signals, Upper Saddle River, New Jersey: Prentice
+% Hall Inc., 2005, p. 427.
+% [18] B. Allen and M. Ghavami, Adaptive array systems: fundamentals and applications, John Wiley
+% & Sons, 2006.
+% [19] L. C. Godara, Smart Antennas, CRC Press, 2004.
+% [20] A. K. R. Chavva, S. K, C. Lim, Y. Lee, J. Kim and Y. Rashid, “Sensor Intelligence Based Beam
+% Tracking for 5G mmWave Systems: A Practical Approach,” in Proc. 2019 IEEE Global
+% Communications Conference (GLOBECOM), Waikoloa, HI, USA, 2019.
+% [21] E. Mosca, “Angle Estimation in Amplitude Comparison Monopulse Systems,” IEEE
+% Transactions on Aerospace and Electronic Systems, Vols. AES-5, no. 2, pp. 205-212, 1969.
+% [22] H. Kim, J. Kim, K. H. Lee and K. S. Kim, "DOA estimation in Cyclic Prefix OFDM Systems in
+% LOS mmWave Channel using Monopulse Ratio," in 2018 International Conference on
+% Information and Communication Technology Convergence (ICTC), Jeju, South Korea, 17-19
+% Oct. 2018.
+% [23] D. Zhu, J. Choi and R. W. Heath, "Auxiliary Beam Pair Enabled AoD and AoA Estimation in
+% mmWave FD-MIMO Systems," in 2016 IEEE Global Communications Conference
+% (GLOBECOM), Washington, DC, USA, 4-8 Dec. 2016.
+% [24] W. Luoshengbin, X. Zhenhai, L. Xinhua and D. Chong, "Detection of unresolved targets for
+% plane array radar based on monopulse ratio," in 2016 CIE International Conference on Radar
+% (RADAR), Guangzhou, China, 10-13 Oct. 2016.
+% 199
+% [25] S. M. Sherman and D. K. Barton, Monopulse Principles and Techniques, Artech House
+% Publishers, 2011.
+% [26] S. Kim, H. Han, N. Kim and H. Park, “Robust Beam Tracking Algorithm for mmWave MIMO
+% Systems in Mobile Environments,” in 2019 IEEE 90th Vehicular Technology Conference
+% (VTC2019-Fall), Honolulu, HI, USA, 2019.
+% [27] M. Rubsamen and A. B. Gershman, “Direction-of-Arrival Estimation for Nonuniform Sensor
+% Arrays: From Manifold Separation to Fourier Domain MUSIC Methods,” IEEE Transactions on
+% Signal Processing, vol. 57, no. 2, pp. 588-599, 2009.
+% [28] J. Lee, J. Park and J. Chun, "Weighted Two-Dimensional Root MUSIC for Joint Angle-Doppler
+% Estimation With MIMO Radar," IEEE Transactions on Aerospace and Electronic Systems, vol.
+% 55, no. 3, pp. 1474-1482, 2019.
+% [29] M. D. Zoltowski, G. M. Kautz and S. D. Silverstein, "Development, performance analysis, and
+% experimental evaluation of beamspace Root-MUSIC," in [Proceedings] ICASSP 91: 1991
+% International Conference on Acoustics, Speech, and Signal Processing, Toronto, Ontario,
+% Canada, 1991.
+% [30] V. T. Ermolaev, A. G. Flaksman, A. V. Elokhin and V. V. Kuptsov, "Minimal Polynomial
+% Method for Estimating Parameters of Signals Received by an Antenna Array," Acoust. Phys.,
+% vol. 64, pp. 83-90, 2018.
+% [31] V. T. Ermolayev, A. G. Flaksman, A. V. Elokhin and O. A. Shmonin, "Angular Superresolution
+% of the Antenna-Array Signals Using the Root Method of Minimum Polynomial of the Correlation
+% Matrix," Radiophysics and Quantum Electronics, vol. 61, no. 3, p. 232–241, 2018.
+% [32] V. T. Ermolayev, A. G. Flaksman, A. V. Elokhin and O. A. Shmonin, "An Experimental Study
+% of the Angular Superresolution of Two Correlated Signals Using the Minimum-Polynomial
+% Method," Radiophysics and Quantum Electronics, vol. 61, no. 11, pp. 841-852, 2019.
+% [33] R. Roy and T. Kailath , "Esprit - Estimation Of Signal Parameters Via Rotational Invariance
+% Techniques," IEEE Trans. Acoustics, Speech and Signal Processing, vol. 37, no. 7, pp. 984-995,
+% 1989.
+% [34] A. Alkhateeb, O. El Ayach, G. Leus and R. W. Heath, "Channel Estimation and Hybrid
+% Precoding for Millimeter Wave Cellular Systems," IEEE Journal of Selected Topics in Signal
+% Processing, vol. 8, no. 5, pp. 831-846, 2014.
+% [35] S. Shaham, M. Ding, M. Kokshoorn, Z. Lin, S. Dang and R. Abbas, "Fast Channel Estimation
+% and Beam Tracking for Millimeter Wave Vehicular Communications," IEEE Access, vol. 7, pp.
+% 141104-141118, 2019.
+% [36] Q. Duan, T. Kim, H. Huang, K. Liu and G. Wang, "AoD and AoA tracking with directional
+% 200
+% sounding beam design for millimeter wave MIMO systems," in 2015 IEEE 26th Annual
+% International Symposium on Personal, Indoor, and Mobile Radio Communications (PIMRC),
+% Hong Kong, 2015, 2015.
+% [37] C. Wang and D. Wang, "Synthetic aperture processing for wireless communication signals with
+% passive moving array," Multidim Syst Sign Process, vol. 31, p. 1491–1507, 2020.
+% [38] A. Maltsev, A. Pudeyev, R. Weiler, M. Peter, W. Keusgen and I. Bolotin, "Virtual Antenna
+% Array Methodology for Outdoor Millimeter-Wave Channel Measurements," in 2016 IEEE
+% Globecom Workshops (GC Wkshps), Washington, USA, 2016.
+% [39] M. Hua, C. Hsu, W. Liao, C. Yao, T. Yeh and H. Liu, "Direction-of-arrival estimator using array
+% switching on software defined radio platform," in 2011 IEEE International Symposium on
+% Antennas and Propagation (APSURSI), Spokane, WA, 2011.
+% [40] C. Jeong, J. Park and H. Yu, "Random access in millimeter-wave beamforming cellular
+% networks: issues and approaches," IEEE Commun. Mag., vol. 53, no. 1, p. 180–185, 2015.
+% [41] C. N. Barati and et al, "Directional initial access for millimeter wave cellular systems," in Proc.
+% 49th Asilomar Conf. Signals Syst. Comput., Pacific Grove, CA, USA, 2015.
+% [42] M. Giordani and M. Zorzi, "Improved user tracking in 5G millimeter wave mobile networks via
+% refinement operations," in Proc. 16th Annu. Mediterr. Ad Hoc Netw. Workshop (Med-Hoc-Net),
+% 2017.
+% [43] Y. Tsang, A. Poon and S. Addepalli, "Coding the beams: Improving beamforming training in
+% mmwave communication system," in Proc. IEEE Global Telecomm. Conf. (GLOBECOM),
+% Houston, TX, USA, 2011.
+% [44] A. K. R. Chavva, K. Shubham, C. Lim, Y. Lee, J. Kim and Y. Rashid, "Sensor Intelligence
+% Based Beam Tracking for 5G MmWave Systems: A Practical Approach," in Proc. 2019 IEEE
+% Global Communications Conference (GLOBECOM), Waikoloa, HI, USA, 2019.
+% [45] L. Wei, Q. Li and G. Wu, “Exhaustive, iterative and hybrid initial access techniques in mmWave
+% communications,” in Proc. IEEE Wireless Commun. Netw. Conf. (WCNC), 2017.
+% [46] V. Desai, L. Krzymien, P. Sartori, W. Xiao, A. Soong and A. Alkhateeb, “Initial beamforming
+% for mmWave communications,” in Proc. 48th Asilomar Conf. Signals Syst. Comput., Pacific
+% Grove, CA, USA, 2014.
+% [47] L. Chen, Y. Yang, X. Chen and W. Wang, “Multi-stage beamforming codebook for 60GHz
+% WPAN,” in in Proc. 6th Int. ICST Conf. Commun. Network., China, China, 2011.
+% [48] J. Wang, Z. Lan, C. Pyo, T. Baykas, C. Sum, M. A. Rahman, J. Gao, R. Funada, F. Kojima, H.
+% Harada and S. Kato, “Beam codebook based beamforming protocol for multi-Gbps millimeter-
+% 201
+% waveWPAN systems,” IEEE J. Sel. Areas Commun., vol. 27, no. 8, p. 1390–1399, 2009.
+% [49] T. Nitsche, C. Cordeiro, A. B. Flores, E. W. Knightly, E. Perahia and J. C. Widmer, "IEEE
+% 802.11ad: directional 60 GHz communication for multi-Gigabit-per-second Wi-Fi [Invited
+% Paper]," IEEE Communications Magazine, vol. 52, no. 12, pp. 132-141, 2014.
+% [50] P. Zhou, K. Cheng, X. Han, X. Fang, Y. Fang, R. He, Y. Long and Y. Liu, “IEEE 802.11ay-
+% Based mmWave WLANs: Design Challenges and Solutions,” IEEE Communications Surveys &
+% Tutorials, vol. 20, no. 3, pp. 1654-1681, 2018.
+% [51] E. Dahlman, S. Parkvall and J. Skold, 5G NR: The Next Generation Wireless Access
+% Technology, Academic Press, 2018.
+% [52] C. K. Yang, D. S. Shim, J. H. Kim, J. P. Han and Y. S. Cho, “Application of motion sensors for
+% beam-tracking of mobile stations in mmWave communication systems,” Sensors ISSN 1424-
+% 8220, vol. 14, no. 10, pp. 19622-19638, 2014.
+% [53] B. Jiang, W. Sheng, R. Zhang, Y. Han and X. Ma, “Adaptive angle tracking loop design based
+% on digital phase-locked loop,” Signal Processing, vol. 125, pp. 221-236, 2016.
+% [54] B. Ristic, S. Arulampalm and N. Gordon, Beyond the Kalman filter : particle filters for tracking
+% applications, Boston: Artech House, 2014.
+% [55] V. Va, H. Vikalo and R. W. Heath, “Beam tracking for mobile millimeter wave communication
+% systems,” in 2016 IEEE Global Conference on Signal and Information Processing (GlobalSIP),
+% Washington, DC, USA, 2016.
+% [56] C. Zhang, D. Guo and P. Fan, “Tracking angles of departure and arrival in a mobile millimeter
+% wave channel,” in Proc. of the IEEE International Conference on Communications, Kuala
+% Lumpur, Malaysia, 2016.
+% [57] S. Shaham, M. Ding, M. Kokshoorn, Z. Lin, S. Dang and R. Abbas, "Fast Channel Estimation
+% and Beam Tracking for Millimeter Wave Vehicular Communications," IEEE Access, no. 7, pp.
+% 141104-141118, 2019.
+% [58] J. Palacios, D. D. Donno and J. Widmer, “Tracking mm-Wave channel dynamics: Fast beam
+% training strategies under mobility,” in Proc. IEEE Conf. Comput. Commun. (INFOCOM),
+% Atlanta, GA, USA, 2017.
+% [59] S. Jayaprakasam, X. Ma, J. W. Choi and S. Kim, “Robust beam-tracking for mmWave mobile
+% communications,” IEEE Commun. Lett., vol. 21, no. 12, p. 2654–2657, 2017.
+% [60] B. Banister and J. Zeidler, “Feedback assisted transmission subspace tracking for MIMO
+% systems,” IEEE Jour. Select. Areas in Commun., vol. 21, no. 3, p. 452–463, 2003.
+% 202
+% [61] J. Yang and D. Williams, “Transmission subspace tracking for MIMO systems with low-rate
+% feedback,” IEEE Trans. Commun., vol. 55, no. 8, p. 1629–1639, 2007.
+% [62] V. T. Ermolayev, K. A. Morozov and A. A. Solonitsyna, “Diversity Reception Based on the
+% Correlation Processing of Signals,” Radiophysics and Quantum Electronics, vol. 60, no. 12, p.
+% 993–999, 2018.
+% [63] M. Park and H. K. Pan, “A spatial diversity technique for IEEE 802.11ad WLAN in 60 GHz
+% band,” IEEE Commun. Lett., vol. 16, no. 8, p. 1260–1262, 2012.
+% [64] S. Kwon and J. Widmer, “Multi-Beam Power Allocation for mmWave Communications under
+% Random Blockage,” in 2018 IEEE 87th Vehicular Technology Conference (VTC Spring), Porto,
+% Portugal, 2018.
+% [65] Z. Xiao, “Suboptimal Spatial Diversity Scheme for 60 GHz Millimeter-Wave WLAN,” IEEE
+% Communications Letters, vol. 17, no. 9, pp. 1790-1793, 2013.
+% [66] K. Hosoya, N. Prasad, K. Ramachandran, N. Orihashi, S. Kishimoto, S. Rangarajan and K.
+% Maruhashi, “Multiple Sector ID Capture (MIDC): A Novel Beamforming Technique for 60-GHz
+% Band Multi-Gbps WLAN/PAN Systems,” IEEE Transactions on Antennas and Propagation, vol.
+% 63, no. 1, pp. 81 - 96, 2015.
+% [67] X. An, C. S. Sum, R. Venkatesha Prasad, J. Wang, Z. Lan, J. Wang, R. Hekmat, H. Harada and I.
+% Niemegeers.
+% [68] M. Alrabeiah and A. Alkhateeb, “Deep Learning for mmWave Beam and Blockage Prediction
+% Using Sub-6 GHz Channels,” IEEE Transactions on Communications, vol. 68, no. 9, pp. 5504-
+% 5518, 2020.
+% [69] L. Simić, J. Arnold, M. Petrova and P. Mähönen, “RadMAC: radar-enabled link obstruction
+% avoidance for agile mm-wave beamsteering,” in Proc. ACM Workshop Hot Topics Wireless
+% (HotWireless), New York, NY, USA, 2016.
+% [70] T. Nishio, R. Arai, K. Yamamoto and M. Morikura, “Proactive traffic control based on human
+% blockage using RGB-D cameras for millimeter wave communications,” in Proc. IEEE CCNC
+% ’15, Las Vegas, Nevada, USA, 2015.
+% [71] Y. Oguma, R. Arai, T. Nishio, K. Yamamoto and M. Morikura, “Proactive Base Station
+% Selection Based on Human Blockage Prediction Using RGB-D Cameras for mmWave
+% Communications,” in 2015 IEEE Global Communications Conference (GLOBECOM), San
+% Diego, CA, USA, 2015.
+% [72] T. Mikuma, T. Nishio, M. Morikura, K. Yamamoto, Y. Asai and R. Miyatake, “Transfer
+% learning-based received power prediction using RGB-D camera in mmwave networks,” in Proc.
+% IEEE VTC Spring, 2019, Kuala Lumpur, Malaysia.
+% 203
+% [73] T. Nishio, H. Okamoto, K. Nakashima, Y. Koda, K. Yamamoto, M. Morikura, Y. Asai and R.
+% Miyatake, "Proactive received power prediction using machine learning and depth images for
+% mmwave networks," IEEE J. Sel. Areas Commun., vol. 37, no. 11, p. 2413–2427, 2019.
+% [74] A. Alkhateeb, “Machine Learning for Reliable mmWave Systems: Blockage Prediction and
+% Proactive Handoff,” in IEEE GlobalSIP, 2018.
+% [75] D. Kumar, J. Kaleva and A. TЁolli, “Rate and reliability trade-off for mmwave communication
+% via multi-point connectivity,” in Proc. IEEE GLOBECOM, Waikoloa, USA, 2019.
+% [76] R. Okabe, H. Iimori and K. Ishibashi, “Low-Complexity Robust Beamforming with Blockage
+% Prediction for Millimeter-Wave Communications,” in 2020 Asia-Pacific Signal and Information
+% Processing Association Annual Summit and Conference (APSIPA ASC), Auckland, New
+% Zealand, 2020.
+% [77] H. Iimori, G. T. F. de Abreu, O. Taghizadeh, R. A. Stoica, T. Hara and K. Ishibashi, “Stochastic
+% learning robust beamforming for millimeter wave systems with path blockage,” IEEE Wireless
+% Commun. Lett., vol. 9, no. 9, pp. 1557 - 1561, 2020.
+% [78] J. Vince, Quaternions for Computer Graphics, London: Springer, 2011.
+% [79] M. D. Ortiguera, C. J. Matos, S. Moises and M. S. Piedade, “Fractional Discrete-Time Signal
+% Processing: Scale Conversion and Linear Prediction,” Nonlinear dynamics. Kluwer Academic
+% Publishers, vol. 29, pp. 173-190, 2002.
