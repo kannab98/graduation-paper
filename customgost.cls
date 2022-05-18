@@ -116,7 +116,7 @@
 \usepackage[
     unicode, 
     colorlinks, 
-    urlcolor=urlcolor, 
+    urlcolor=linkcolor, 
     linkcolor=linkcolor,
     citecolor=linkcolor
 ]{hyperref}
