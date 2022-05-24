@@ -31,6 +31,7 @@
   includefoot,
 ]{geometry}
 \RequirePackage{setspace}
+\setstretch{1.44}
 \onehalfspacing
 
 \RequirePackage{csquotes}
