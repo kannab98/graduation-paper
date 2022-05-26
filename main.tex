@@ -65,7 +65,9 @@
 \usepackage{subcaption}
 \usepackage{soulutf8}
 
-
+\makeatletter
+\patchcmd{\@setref}{\bfseries ??}{\bfseries\hl{??}}{}{}
+\makeatother
 
 % \titlecontents{chapter}[0pt\addvspace{15pt}]
 % {\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
