@@ -5,14 +5,24 @@
 \LoadClass{article}
 
 
+% \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1, T2A]{fontenc}
-\RequirePackage[english, russian]{babel}
-
-
+% \RequirePackage[english, russian]{babel}
+\RequirePackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+% \usepackage{unicode-math}
 
 \RequirePackage[fontsize=12]{fontsize}
 \RequirePackage{fontspec}
 \setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+% \RequirePackage{babel}
+
+
+
+
 % \setmainfont{times.ttf}[
 %     Path = fonts/,
 %     BoldFont       =  timesbd.ttf,
@@ -53,7 +63,8 @@
 ]{biblatex}
 
 
-\RequirePackage{amssymb, amsmath, physics}
+% \RequirePackage{amssymb, amsmath, physics}
+\RequirePackage{amsmath, physics}
 
 \RequirePackage{graphicx}
 
@@ -65,10 +76,10 @@
 \RequirePackage[normal,nooneline,justification=centering]{caption}
 
 % Длинное тире в качестве разделителя
-\DeclareCaptionLabelSeparator*{emdash}{\space\cdash---\space}
+% \DeclareCaptionLabelSeparator*{emdash}{\space\cdash---\space}
 
 % Между подписью и рисунком 10pt
-\captionsetup{labelsep=emdash,aboveskip=10pt,belowskip=0pt,position=bottom}
+% \captionsetup{labelsep=emdash,aboveskip=10pt,belowskip=0pt,position=bottom}
 
 % У рисунков выравнивание по центру
 \captionsetup[figure]{justification=centering}
@@ -121,15 +132,16 @@
 \usepackage{xcolor}
 \definecolor{linkcolor}{HTML}{000000} % цвет ссылок
 \definecolor{urlcolor}{HTML}{799B03} % цвет гиперссылок
+\definecolor{blue}{HTML}{3777BC}
  
  
  
 \usepackage[
     unicode, 
     colorlinks, 
-    urlcolor=linkcolor, 
-    linkcolor=linkcolor,
-    citecolor=linkcolor
+    urlcolor=blue, 
+    linkcolor=blue,
+    citecolor=blue,
 ]{hyperref}
 
 

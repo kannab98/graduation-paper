@@ -15,8 +15,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-
-
 % Для псевдокода
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{algorithm}
@@ -43,6 +41,17 @@
 \makenomenclature  
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+\usepackage{pgfplotstable} % Generates table from .csv
+\pgfplotsset{compat=1.18}
+\usepackage{tabularx}
+% Setup siunitx:
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 2, % to 2 places
+}
 
 
 
@@ -71,10 +80,24 @@
 
 % \titlecontents{chapter}[0pt\addvspace{15pt}]
 % {\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
-%   \small\scshape\vskip-\baselineskip}{}{}{}
+%   \small\scshape\vskip-\baseline{}skip}{}{}{}
 % \titlecontents*{section}[20pt]
 % {\upshape}{}{}
 % {, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+
+\def\ACS{\textit{ACS}}
+\def\baseline{\textit{baseline}}
+\def\hSearchMMSE{\textit{hSearchMMSE}}
+\def\AuxBeam{\textit{AuxBeam}}
+
+% \newcommand{\ACS{}}{{ACS}~}
+% \newcommand{\baseline{}}{{baseline}~}
+% \newcommand{\hSearchMMSE{}}{{hSearchMMSE}~}
+% \newcommand{\AuxBeam}{{AuxBeam}~}
+
+\makeatletter
+\patchcmd{\@setref}{\bfseries ??}{\bfseries\hl{??}}{}{}
+\makeatother
 \begin{document}
 
 
@@ -82,8 +105,13 @@
 \maketitle
 \newpage
 
+\small
+{
+\hypersetup{linkcolor=black}
 \tableofcontents
-\newpage
+}
+\normalsize
+
 \include{sections/99-nomencl}
 \printnomenclature
 \newpage
@@ -101,7 +129,9 @@
 
 % \nocite{*}
 \newpage
+{\footnotesize
 \printbibliography
+}
 
 
 \end{document}

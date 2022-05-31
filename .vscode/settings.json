@@ -8,24 +8,18 @@
             ]
         },
         {
+            "name": "makeindex",
+            "tools": [
+                "makeindex",
+            ]
+        },
+        {
             "name": "lualatex-biber-lualatex-lualatex",
             "tools": [
                 "lualatex",
                 "biber",
                 "lualatex",
                 "lualatex",
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "tools": [
-                "pdflatex",
-            ]
-        },
-        {
-            "name": "makeindex",
-            "tools": [
-                "makeindex",
             ]
         },
         {
