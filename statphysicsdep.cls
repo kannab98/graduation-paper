@@ -63,8 +63,8 @@
 ]{biblatex}
 
 
-% \RequirePackage{amssymb, amsmath, physics}
-\RequirePackage{amsmath, physics}
+\RequirePackage{amssymb, amsmath, physics}
+% \RequirePackage{amsmath, physics}
 
 \RequirePackage{graphicx}
 
