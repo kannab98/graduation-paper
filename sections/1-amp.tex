@@ -167,7 +167,7 @@ Input back-off}). При этом обычно представляется во
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.95\linewidth]{figs/ofdm_pa_distortions.png}
+    \includegraphics[width=0.98\linewidth]{figs/ofdm_pa_distortions.png}
     \caption{Искажение различных сигналов на приемнике при внесении нелинейного
     искажения на передатчике}
     \label{fig:lls_rapp_distortions_0}
@@ -217,13 +217,14 @@ OFDM-символа. Принципиальная схема генерации 
 поток данных делится на несколько параллельных подпотоков с более низкой
 скоростью передачи (увеличение длительности символа), а каждый поток
 модулируется на своей ортогональной поднесущей. OFDM также достаточно прост
-в обработке, чаще всего применяется обратное преобразование Фурье, с
-помощью которого происходит преобразование сигнала из частотной области во
-временную.
+в обработке, чаще всего применяется прямое и обратное преобразование Фурье,
+с помощью которого происходит перенос сигнала между частотной и временной
+областью.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=1]{figs/ofdm_scheme.pdf}
-    \caption{Принципиальная схема генерации CP-OFDM-сигнала}
+    \caption{Принципиальная схема генерации CP-OFDM-сигнала.
+    \textbf{M}-IFFT означает что операция IFFT производится по M точкам.}
     \label{fig:ofdm_scheme}
 \end{figure}
 
@@ -252,16 +253,17 @@ OFDM-символа. Принципиальная схема генерации 
     \centering
     % \includegraphics[scale=1]{figs/ofdm_scheme.pdf}
     % \includegraphics[scale=0.8]{example-image-a}
-    \includegraphics[scale=1]{figs/dfts_scheme.png}
-    \caption{Принципиальная схема генерации DFT-s-OFDM-сигнала}
+    \includegraphics[scale=1]{figs/dfts_scheme.pdf}
+    \caption{Принципиальная схема генерации DFT-s-OFDM-сигнала.
+    \textbf{K}-DFT означает что операция DFT производится по K точкам.}
     \label{fig:dfts_scheme}
 \end{figure}
 Генерация DFT-s-OFDM сигнала отличается от классического OFDM включением
 предварительного кодирования параллелизованного потока данных при помощи
 прямого дискретного преобразования Фурье (DFT, FFT), примененного к
-ограниченному количеству поднесущих OFDM сигнала. Данная операция в
-стандарте 3GPP называется \textit{Transform Precoding}. По своей сути
-данная процедура повторяет принцип, применяемый в SC-FDMA. За счет
+ограниченному количеству поднесущих OFDM сигнала ($K<M$). В стандарте 3GPP
+данная операция называется \textit{Transform Precoding}. По своей сути
+эта процедура повторяет принцип, применяемый в SC-FDMA. За счет
 сочетания Transform Precoding и IFFT, присутствующего в процедуре создания
 OFDM сигнала, полученный сигнал имеет меньшие значения PAPR, тем самым
 более эффективно используя ограниченный диапазон работы усилителя.
@@ -284,8 +286,9 @@ OFDM сигнала, полученный сигнал имеет меньшие
 \begin{figure}[h!]
     \centering
     % \includegraphics[scale=1]{figs/ofdm_scheme.pdf}
-    \includegraphics[width=0.49\linewidth]{figs/papr_scheme.png}
-    \includegraphics[width=0.49\linewidth]{figs/papr_ofdm.png}
+    % \includegraphics[width=0.49\linewidth]{figs/papr_scheme.png}
+    % \includegraphics[width=0.49\linewidth]{figs/papr_ofdm.png}
+    \includegraphics[scale=1]{figs/papr_explanation.pdf}
     \caption{PAPR}
     \label{fig:papr}
 \end{figure}
@@ -458,7 +461,7 @@ $p$ - показатель гладкости характеристики. Па
     \label{tab:pa_params}
 \end{table}
 
-\subsubsection{Новая модель для диапазона частот 100-200 ГГц}
+\subsubsection{Параметры новой модели для диапазона частот 100-200 ГГц}
 Для исследования применимости нового метода компенсации в диапазоне 100-200
 ГГц необходима соответствующая модель УМ, для начальной имплементации ее в
 систему с целью внесения соответствующих искажений в сигнал, и последующей
