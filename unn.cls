@@ -31,8 +31,7 @@
   includefoot,
 ]{geometry}
 \RequirePackage{setspace}
-% \setstretch{1.44}
-\setlength\parindent{1.25cm}
+\setstretch{1.44}
 \onehalfspacing
 
 \RequirePackage{csquotes}
@@ -42,12 +41,12 @@
   isbn=true,
   url=true,
   defernumbers=true,
-  % sorting=nyt, % "Sort by name, year, title."
+  %sorting=nyt, % "Sort by name, year, title."
   sorting=none, % "Do not sort at all. All entries are processed in citation order." (order of appearance)
   bibencoding=utf8,
   backend=biber,
   sortlocale=en_US,
-  language=auto,
+  autolang=other,
   maxnames=10
 ]{biblatex}
 
@@ -56,12 +55,11 @@
 
 \RequirePackage{graphicx}
 
-\RequirePackage{indentfirst}
-% \RequirePackage[justification=centering]{caption}
+
 % 4.3.1 - 4.3.3 Иллюстрации
 
 % Подпись по умолчанию слева (для таблиц, листингов и т.п.)
-\RequirePackage[normal,nooneline,justification=centering]{caption}
+\RequirePackage[normal,nooneline]{caption}
 
 % Длинное тире в качестве разделителя
 \DeclareCaptionLabelSeparator*{emdash}{\space\cdash---\space}
@@ -107,11 +105,6 @@
 \newcommand\SafetyRules{
   \section*{Техника безопасности}
   \addcontentsline{toc}{section}{Техника безопасности}
- }
-
-\newcommand\Conclusion{
-  \section*{Заключение}
-  \addcontentsline{toc}{section}{Заключение}
  }
 
  % Цвета для гиперссылок

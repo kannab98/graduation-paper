@@ -15,7 +15,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\usepackage{gitinfo2}
 
 
 % Для псевдокода
@@ -45,16 +44,6 @@
 \makeindex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
-\usepackage{siunitx} % Formats the units and values
-\usepackage{pgfplotstable} % Generates table from .csv
-\usepackage{tabularx}
-% Setup siunitx:
-\sisetup{
-  round-mode          = places, % Rounds numbers
-  round-precision     = 2, % to 2 places
-}
-
 
 
 
@@ -69,12 +58,7 @@
 \setcounter{MaxMatrixCols}{20}
 
 % Настройка переносов некоторых слов
-\hyphenation{
-  при-ем-ни-ков,
-  э-лек-трон-но,
-  вы-чис-лит-ель-ной,
-  hSearch-MMSE
-}
+\hyphenation{при-ем-ни-ков}
 
 \addbibresource{library.bib}
 \usepackage{enumitem}
@@ -91,15 +75,6 @@
 % \titlecontents*{section}[20pt]
 % {\upshape}{}{}
 % {, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
-
-\newcommand{\ACS}{\textit{ACS~}}
-\newcommand{\baseline}{\textit{baseline~}}
-\newcommand{\hSearchMMSE}{\textit{hSearchMMSE~}}
-\newcommand{\AuxBeam}{\textit{AuxBeam~}}
-
-\makeatletter
-\patchcmd{\@setref}{\bfseries ??}{\bfseries\hl{??}}{}{}
-\makeatother
 \begin{document}
 
 
@@ -107,12 +82,12 @@
 \maketitle
 \newpage
 
-\small
 \tableofcontents
-\normalsize
-
+\newpage
 \include{sections/99-nomencl}
 \printnomenclature
+\newpage
+
 \include{sections/0-intro}
 \include{sections/1-amp}
 \include{sections/2-compensation}
@@ -120,14 +95,12 @@
 \include{sections/4-conclusion}
 
 
-\include{sections/97-conclusion}
 \include{sections/98-safety}
 
 
 
 % \nocite{*}
 \newpage
-\footnotesize
 \printbibliography
 
 
