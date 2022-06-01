@@ -1,0 +1,127 @@
+\documentclass{report-statphysicsdep}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Настройки титулки
+\usepackage{report-unn-titlepage}
+\csdef{Title@WorkTitle}{Метод компенсации нелинейных искажений усилителя
+мощности для стандарта мобильной связи 5G NR}
+
+\clearauthors
+\addauthor{Научный руководитель,  \\ профессор, д.ф.-м.н}{Мальцев А.А.}
+\addauthor{Студент 2-го курса магистратуры}{Шиков А.П.}
+
+\csdef{Title@WorkType}{Отчет по производственной практике}
+\csdef{Title@WorkTypeSmall}{(Преддипломная практика)}
+\csdef{Title@Confirm}{}
+\csdef{Title@Department}{Радиофизический факультет \\ 
+Кафедра статистической радиофизики и мобильных систем связи
+}
+\csdef{Title@Specialization}{}
+
+
+\usepackage{gitinfo2}
+
+
+% Для псевдокода
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{algorithm}
+\usepackage{algpseudocode} 
+\floatname{algorithm}{Алгоритм}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Настройки номенклатуры
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{nomencl}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+\item[\bfseries
+\ifstrequal{#1}{A}{Сокращения}{%
+\ifstrequal{#1}{B}{Обозначения}{%
+\ifstrequal{#1}{C}{}{}}}%
+]}
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+\renewcommand{\nompreamble}{\footnotesize\begin{multicols}{2}}
+\renewcommand{\nompostamble}{\end{multicols}}
+\renewcommand{\nomname}{Обозначения и сокращения}
+\makenomenclature  
+\makeindex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+\usepackage{pgfplotstable} % Generates table from .csv
+\usepackage{tabularx}
+% Setup siunitx:
+\sisetup{
+  round-mode          = places, % Rounds numbers
+  round-precision     = 2, % to 2 places
+}
+
+
+
+
+
+
+% Прочее
+\newcommand\mean[1]{\langle #1 \rangle}
+\newcommand\const{\text{const}}
+\renewcommand{\phi}{\varphi}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand\vec[1]{\vectorbold{#1}}
+\setcounter{MaxMatrixCols}{20}
+
+% Настройка переносов некоторых слов
+\hyphenation{
+  при-ем-ни-ков,
+  э-лек-трон-но,
+  вы-чис-лит-ель-ной,
+  hSearch-MMSE
+}
+
+\addbibresource{library.bib}
+\usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{soulutf8}
+
+
+
+% \titlecontents{chapter}[0pt\addvspace{15pt}]
+% {\llap{\makebox[3em]{\oldstylenums{\thecontentspage\hfill\thecontentslabel}}\hskip1em}
+%   \small\scshape\vskip-\baselineskip}{}{}{}
+% \titlecontents*{section}[20pt]
+% {\upshape}{}{}
+% {, \oldstylenums{\thecontentspage}}[][\ \textbullet\ ][]
+
+\newcommand{\ACS}{\textit{ACS~}}
+\newcommand{\baseline}{\textit{baseline~}}
+\newcommand{\hSearchMMSE}{\textit{hSearchMMSE~}}
+\newcommand{\AuxBeam}{\textit{AuxBeam~}}
+
+\makeatletter
+\patchcmd{\@setref}{\bfseries ??}{\bfseries\hl{??}}{}{}
+\makeatother
+\begin{document}
+
+
+
+\maketitle
+\newpage
+
+\include{sections/2-compensation.tex}
+
+
+
+
+\nocite{Maltsev2010a,Xu2002,Rappaport2015,Giordani2019}
+\newpage
+\footnotesize
+\printbibliography
+
+
+\end{document}
+
+
