@@ -360,29 +360,29 @@ RX}_{in}$ по столбцам:
 где $S^{FD, RX}_{out}$ - результирующий компенсированный сигнал в частотной
 области. 
 
-Продемонстрируем работу разработанного метода компенсации на сигнале
-CP-OFDM. Используем те же параметры, что и в случае демонстрации искажений
-в результате реализации УМ в LLS (см. рис.
-\ref{fig:lls_rapp_distortions_10dbm}, \ref{fig:lls_rapp_distortions_12dbm}.
-$P^{dBm}_{TX} = 10,12$ dBm, $OBO = 0,3$ dB, $SNR=30$ dB, 64-QAM модуляция). 
+Покажем работу разработанного метода компенсации на сигнале CP-OFDM.
+Используем те же параметры, что и в случае демонстрации искажений в
+результате реализации УМ в LLS (см. рис.
+\ref{fig:lls_rapp_distortions_10dbm}. $P^{dBm}_{TX} = 10$ dBm, $OBO = 0$
+dB, $SNR=30$ dB, 64-QAM модуляция). На рис.
+\ref{fig:ofdm_lls_compensation_10dbm} приведены созвездия в случае
+отсутствия компенсации, а также результат работы разработанного метода.
+В случае идеального усилителя, BER составляет $5.46\cdot 10^{-5}$, при включении
+нелинейного усилителя (модель 30-70 ГГц), BER увеличивается на два порядка
+до $2.36\cdot 10^{-3}$. При использовании компенсации, BER понижается до
+$3.85\cdot 10^{-4}$. Визуально наблюдается уменьшение разброса облаков
+вокруг изначальных точек созвездия.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.45\linewidth]{example-image-a}
-    \includegraphics[width=0.45\linewidth]{example-image-a}
-    \caption{компенсация ебатьб}
-    \label{fig:comp1}
+    \includegraphics[width=0.45\linewidth]{figs/ofdm_pa_on_obo0_TX10_noPN2.png}
+    \includegraphics[width=0.45\linewidth]{figs/ofdm_pa_on_comp_obo0_TX10_noPN.png}
+    \caption{Демонстрация работы разработанного метода компенсации на
+    примере сигнала CP-OFDM. Слева приведено искаженное УМ созвездие (синие
+    кресты), справа - искажения компенсированы. Красные точки обозначают
+    неискаженные созвездия.}
+    \label{fig:ofdm_lls_compensation_10dbm}
 \end{figure}
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.45\linewidth]{example-image-a}
-    \includegraphics[width=0.45\linewidth]{example-image-a}
-    \caption{компенсация ебатьб2}
-    \label{fig:comp2}
-\end{figure}
-
-TBD
-
 
 
 
@@ -462,4 +462,21 @@ TBD
     \includegraphics[width=0.99\linewidth]{figs/dfts_compensation_scheme.pdf}
     \caption{}
     \label{fig:dfts_compensation_scheme}
+\end{figure}
+
+Покажем работу разработанного метода компенсации на сигнале
+CP-OFDM. Используем те же параметры, что и в случае демонстрации искажений
+в результате реализации УМ в LLS (см. рис.
+\ref{fig:lls_rapp_distortions_10dbm}.
+$P^{dBm}_{TX} = 10$ dBm, $OBO = 0$ dB, $SNR=30$ dB, 64-QAM модуляция). 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\linewidth]{figs/dfts_10dbm_obo0_uncompensated.png}
+    \includegraphics[width=0.45\linewidth]{figs/dfts_10dbm_obo0_compensated.png}
+    \caption{Демонстрация работы разработанного метода компенсации на
+    примере сигнала DFT-s-OFDM. Слева приведено искаженное УМ созвездие из
+    рис. \ref{fig:lls_rapp_distortions_10dbmasdsadas}, справа - искажения
+    компенсированы. }
+    \label{fig:dfts_lls_compensation_10dbm}
 \end{figure}

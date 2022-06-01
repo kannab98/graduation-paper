@@ -6,4 +6,4 @@ L = findobj(1,'type','line');
 set(L(2),'color','r')
 copyobj(L,findobj(2,'type','axes'));
 
-legend("УМ включен", "Изначальное созвездие","УМ выключен",'Location','southeast')
+legend("УМ включен, скомпенсирован", "Изначальное созвездие","УМ выключен",'Location','southeast')
