@@ -2,7 +2,7 @@
 
 \ProvidesClass{statphysicsdep}[2015/11/01 v2.0 Non Standard LaTeX document class]
 
-\LoadClass{article}
+\LoadClass[a4paper]{article}
 
 
 % \RequirePackage[utf8]{inputenc}
