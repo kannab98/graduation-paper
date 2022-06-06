@@ -2,13 +2,10 @@
 
 \ProvidesClass{statphysicsdep}[2015/11/01 v2.0 Non Standard LaTeX document class]
 
-\LoadClass{article}
-
+\LoadClass[a4paper]{article}
 
 \RequirePackage[T1, T2A]{fontenc}
 \RequirePackage[english, russian]{babel}
-
-
 
 \RequirePackage[fontsize=12]{fontsize}
 \RequirePackage{fontspec}
@@ -89,11 +86,11 @@
 \captionsetup[figure]{labelformat=figure}
 
 % ... допускается нумерация рисунков в пределах раздела
-\@addtoreset{figure}{section}%
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}%
+% \@addtoreset{figure}{section}%
+% \renewcommand{\thefigure}{\thesection.\arabic{figure}}%
 
-\@addtoreset{table}{section}%
-\renewcommand{\thetable}{\thesection.\arabic{table}}%
+% \@addtoreset{table}{section}%
+% \renewcommand{\thetable}{\thesection.\arabic{table}}%
 
 
 %  ненумерованные перечисления
