@@ -17,7 +17,7 @@
 \RequirePackage{fontspec}
 \setmainfont{CMU Serif}
 \setsansfont{CMU Sans Serif}
-\setmonofont{CMU Typewriter Text}
+% \setmonofont{CMU Typewriter Text}
 % \RequirePackage{babel}
 
 
