@@ -1,0 +1,17 @@
+\documentclass{unn}
+
+
+\addbibresource{mypub.bib}
+
+\makeatletter
+\patchcmd{\@setref}{\bfseries ??}{\bfseries\hl{??}}{}{}
+\makeatother
+% \pagenumbering{gobble}
+
+\begin{document}
+\nocite{*}
+\printbibliography[title={Списо публикаций автора}]
+
+\end{document}
+
+
